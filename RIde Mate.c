@@ -44,9 +44,9 @@ typedef struct Queue {
 } Queue;
 
 
-// --------------------------------------------
+
 // QUEUE SYSTEM
-// --------------------------------------------
+
 
 Queue* createQueue() {
     Queue* q = malloc(sizeof(Queue));
@@ -86,9 +86,9 @@ RideRequest* dequeue(Queue* q) {
 }
 
 
-// --------------------------------------------
+// -------------
 // FILE HANDLING
-// --------------------------------------------
+// -------------
 
 void saveDriversToFile(DriverNode* head) {
     FILE* f = fopen(DRIVER_DB_FILE, "w");
@@ -134,9 +134,9 @@ void loadDriversFromFile(DriverNode** headRef) {
 }
 
 
-// --------------------------------------------
+// -----------------
 // DRIVER MANAGEMENT
-// --------------------------------------------
+// -----------------
 
 void addDriver(DriverNode** headRef) {
     DriverNode* n = malloc(sizeof(DriverNode));
@@ -245,9 +245,9 @@ void removeDriver(DriverNode** headRef) {
 }
 
 
-// --------------------------------------------
+// ----------------
 // GRAPH + DIJKSTRA
-// --------------------------------------------
+// ----------------
 
 void initGraph(int graph[MAX_NODES][MAX_NODES], int *node_count) {
     int n = NODE_COUNT;
@@ -322,9 +322,9 @@ void reconstructPath(int parent[], int src, int dest, int path[], int *len) {
 }
 
 
-// --------------------------------------------
+// -------------------
 // FIND NEAREST DRIVER
-// --------------------------------------------
+// -------------------
 
 Driver* findNearestAvailableDriver(
         DriverNode* head,
@@ -361,9 +361,9 @@ Driver* findNearestAvailableDriver(
 }
 
 
-// --------------------------------------------
+// ---------------
 // RIDE SIMULATION
-// --------------------------------------------
+// ---------------
 
 void simulateMovementAndComplete(
         Driver* driver,
@@ -407,9 +407,9 @@ void simulateMovementAndComplete(
 }
 
 
-// --------------------------------------------
+// ------------------
 // RIDE REQUEST SYSTEM
-// --------------------------------------------
+// ------------------
 
 void createRideRequest(Queue* q) {
     if (!q) return;
@@ -502,9 +502,9 @@ void completeRide(DriverNode* head) {
 }
 
 
-// --------------------------------------------
+// --------------
 // MEMORY CLEANUP
-// --------------------------------------------
+// --------------
 
 void freeDriverList(DriverNode** headRef) {
     DriverNode *c=*headRef, *n;
@@ -528,9 +528,9 @@ void freeRideQueue(Queue* q) {
 }
 
 
-// --------------------------------------------
+// -----------
 // MENU + MAIN
-// --------------------------------------------
+// -----------
 
 void displayMainMenu() {
     printf("\n---- MAIN MENU ----\n");
